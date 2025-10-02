@@ -1,4 +1,4 @@
-<img width="1417" height="698" alt="Screenshot 2025-10-01 at 22 37 17" src="https://github.com/user-attachments/assets/7c7b6de9-5737-479a-986e-5ae283bbc295" /><img width="1023" height="680" alt="Screenshot 2025-10-01 at 22 37 55" src="https://github.com/user-attachments/assets/4c2eac9f-40d3-42fd-b448-5554d855bfd2" /><img width="1417" height="698" alt="Screenshot 2025-10-01 at 22 37 17" src="https://github.com/user-attachments/assets/581cbf9f-2c3c-4d1d-a651-82ef3a54da1f" /># TileVision: AI-Powered Interior Design Visualizer
+## **TileVision: AI-Powered Interior Design Visualizer**
 
 TileVision is a cutting-edge web application that leverages the power of generative AI to help homeowners, designers, and contractors visualize how new tiles will look in a room before making a purchase. By simply uploading a photo and describing the desired changes in plain English, users can see a realistic rendering of their space in seconds.
 
