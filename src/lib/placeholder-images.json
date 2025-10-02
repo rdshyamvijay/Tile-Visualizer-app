@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "room-1",
-      "description": "A modern, empty living room with white walls and a window.",
-      "imageUrl": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxsaXZpbmclMjByb29tfGVufDB8fHx8MTc1OTM2OTY5MXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "living room"
+      "description": "Modern Bedroom",
+      "imageUrl": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "bedroom"
     },
     {
       "id": "floor-tile-1",
@@ -13,34 +13,40 @@
       "imageHint": "wood floor"
     },
     {
-      "id": "floor-tile-2",
-      "description": "Calacatta Gold Marble",
+      "id": "wall-tile-CG-001",
+      "description": "Calacatta Gold",
       "imageUrl": "https://images.unsplash.com/photo-1566041510394-cf7c8fe21800?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtYXJibGUlMjBmbG9vcnxlbnwwfHx8fDE3NTkzNDkyMjZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "marble floor"
+      "imageHint": "marble wall"
     },
     {
-      "id": "floor-tile-3",
-      "description": "Gray Concrete",
-      "imageUrl": "https://images.unsplash.com/photo-1515895309288-a3815ab7cf81?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb25jcmV0ZSUyMGZsb29yfGVufDB8fHx8MTc1OTM4NTM0OHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "concrete floor"
+      "id": "wall-tile-BSH-002",
+      "description": "Black Slate Hex",
+      "imageUrl": "https://images.unsplash.com/photo-1590214157922-ce5a7a5491a6?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "slate hex"
     },
     {
-      "id": "floor-tile-4",
+      "id": "floor-tile-OBS-003",
+      "description": "Ocean Blue Subway",
+      "imageUrl": "https://images.unsplash.com/photo-1759304054342-a027f6cdc9b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bW9zYWljJTIwdGlsZXxlbnwwfHx8fDE3NTkzODUzNDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "blue subway"
+    },
+    {
+      "id": "floor-tile-CT-004",
       "description": "Confetti Terrazzo",
       "imageUrl": "https://images.unsplash.com/photo-1599923363358-3932a4f21958?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "terrazzo floor"
+    },
+    {
+      "id": "floor-tile-2",
+      "description": "Gray Concrete",
+      "imageUrl": "https://images.unsplash.com/photo-1515895309288-a3815ab7cf81?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb25jcmV0ZSUyMGZsb29yfGVufDB8fHx8MTc1OTM4NTM0OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "concrete floor"
     },
     {
       "id": "wall-tile-1",
       "description": "White Subway",
       "imageUrl": "https://images.unsplash.com/photo-1643816476022-7406ff441a2f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c3Vid2F5JTIwdGlsZXxlbnwwfHx8fDE3NTkzODUzNDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "subway tile"
-    },
-    {
-      "id": "wall-tile-2",
-      "description": "Blue Mosaic",
-      "imageUrl": "https://images.unsplash.com/photo-1759304054342-a027f6cdc9b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bW9zYWljJTIwdGlsZXxlbnwwfHx8fDE3NTkzODUzNDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "mosaic tile"
     },
     {
       "id": "wall-tile-3",

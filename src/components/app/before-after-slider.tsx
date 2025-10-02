@@ -2,10 +2,8 @@
 
 import React, { useState, useRef, useCallback } from 'react';
 import Image from 'next/image';
-import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Download, Share2, Maximize } from 'lucide-react';
+import { Download, Share2 } from 'lucide-react';
 
 interface BeforeAfterSliderProps {
   beforeImage: string;
@@ -60,47 +58,44 @@ export function BeforeAfterSlider({ beforeImage, afterImage }: BeforeAfterSlider
   };
 
   return (
-    <Card>
-      <CardContent className="p-4 md:p-6">
-        <div ref={containerRef} className="relative w-full aspect-video select-none overflow-hidden rounded-lg">
-          <Image
-            src={beforeImage}
-            alt="Before"
-            layout="fill"
-            objectFit="cover"
-            className="w-full h-full"
-            priority
-          />
-          <div
-            className="absolute top-0 left-0 h-full w-full overflow-hidden"
-            style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
-          >
+    <div className="relative w-full h-full select-none overflow-hidden">
+        <div ref={containerRef} className="relative w-full h-full">
             <Image
-              src={afterImage}
-              alt="After"
-              layout="fill"
-              objectFit="cover"
-              className="w-full h-full"
-              priority
+                src={beforeImage}
+                alt="Before"
+                layout="fill"
+                objectFit="cover"
+                className="w-full h-full"
+                priority
             />
-          </div>
-          <div
-            className="absolute top-0 bottom-0 w-1 bg-white/50 cursor-ew-resize backdrop-blur-sm"
-            style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}
-            onMouseDown={handleMouseDown}
-            onTouchStart={handleTouchStart}
-          >
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-lg">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-primary"><path d="M13 18L18 12L13 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M11 6L6 12L11 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <div
+                className="absolute top-0 left-0 h-full w-full overflow-hidden"
+                style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
+            >
+                <Image
+                src={afterImage}
+                alt="After"
+                layout="fill"
+                objectFit="cover"
+                className="w-full h-full"
+                priority
+                />
             </div>
-          </div>
+            <div
+                className="absolute top-0 bottom-0 w-1 bg-white/50 cursor-ew-resize backdrop-blur-sm"
+                style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}
+                onMouseDown={handleMouseDown}
+                onTouchStart={handleTouchStart}
+            >
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-lg">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-primary"><path d="M13 18L18 12L13 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M11 6L6 12L11 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </div>
+            </div>
         </div>
-        <div className="mt-4 flex flex-wrap gap-2 justify-center">
-            <Button onClick={handleDownload}><Download className="mr-2"/>Download Result</Button>
-            <Button variant="outline" onClick={handleShare}><Share2 className="mr-2"/>Share</Button>
-            <Button variant="outline" size="icon"><Maximize/></Button>
+        <div className="absolute bottom-4 right-4 flex flex-wrap gap-2 justify-center">
+            <Button onClick={handleDownload} variant="secondary"><Download className="mr-2"/>Download</Button>
+            <Button variant="secondary" onClick={handleShare}><Share2 className="mr-2"/>Share</Button>
         </div>
-      </CardContent>
-    </Card>
+    </div>
   );
 }
