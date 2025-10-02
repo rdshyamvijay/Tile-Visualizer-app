@@ -1,4 +1,4 @@
-# TileVision: AI-Powered Interior Design Visualizer
+<img width="1417" height="698" alt="Screenshot 2025-10-01 at 22 37 17" src="https://github.com/user-attachments/assets/7c7b6de9-5737-479a-986e-5ae283bbc295" /><img width="1023" height="680" alt="Screenshot 2025-10-01 at 22 37 55" src="https://github.com/user-attachments/assets/4c2eac9f-40d3-42fd-b448-5554d855bfd2" /><img width="1417" height="698" alt="Screenshot 2025-10-01 at 22 37 17" src="https://github.com/user-attachments/assets/581cbf9f-2c3c-4d1d-a651-82ef3a54da1f" /># TileVision: AI-Powered Interior Design Visualizer
 
 TileVision is a cutting-edge web application that leverages the power of generative AI to help homeowners, designers, and contractors visualize how new tiles will look in a room before making a purchase. By simply uploading a photo and describing the desired changes in plain English, users can see a realistic rendering of their space in seconds.
 
@@ -40,26 +40,27 @@ Here’s a walkthrough of the user experience from start to finish.
 ### 1. Admin Login
 
 Secure access to the platform for administrators to manage tiles, users, and credits.
+<img width="737" height="326" alt="Screenshot 2025-10-01 at 22 13 53" src="https://github.com/user-attachments/assets/93a2170e-95cd-42c8-a856-349b11523a4d" />
 
-*(Placeholder for Login Screenshot)*
 
 ### 2. Upload Your Room
 
 Start a new project by uploading a photo of the space you want to transform.
+<img width="1429" height="716" alt="Screenshot 2025-10-01 at 22 30 57" src="https://github.com/user-attachments/assets/04971ee1-e34f-44e9-a9ee-ff4a586611ed" />
 
-*(Placeholder for Room Upload Screenshot)*
 
 ### 3. Design with a Prompt
 
 Use the intuitive prompt interface to describe the changes you want to see. You can select from existing tiles or type their names directly.
+<img width="398" height="693" alt="Screenshot 2025-10-01 at 22 32 08" src="https://github.com/user-attachments/assets/6ce5b316-716f-484c-a60b-25dd7229161a" />
 
-*(Placeholder for Prompting Screenshot)*
+
 
 ### 4. See the Results
 
 Instantly visualize the transformation with a before-and-after slider. The AI renders your vision, ready for you to review.
+![Uploading Screenshot 2025-10-01 at 22.32.51.png…]()
 
-*(Placeholder for Final Result Screenshot)*
 
 ---
 
