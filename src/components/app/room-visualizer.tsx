@@ -191,7 +191,7 @@ export default function RoomVisualizer() {
 
 
   const VisualizationStep = ({ number, title, children, className }: { number?: number, title: string, children: React.ReactNode, className?: string }) => (
-    <Card className={cn("overflow-hidden", className)}>
+    <Card className={cn("overflow-hidden h-fit", className)}>
       <CardHeader className="flex flex-row items-center gap-4 bg-muted/50">
         {number && <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold text-lg">{number}</div>}
         <div>
@@ -206,107 +206,107 @@ export default function RoomVisualizer() {
 
   return (
     <section id="visualizer" className="w-full py-12 md:py-24 bg-background">
-      <div className="container px-4 md:px-6">
+      <div className="container px-4 md:px-6 space-y-8">
         <div className="grid gap-8 md:grid-cols-2">
+            <VisualizationStep title="1. Upload Your Room">
+                <div className="w-full aspect-video rounded-lg border-2 border-dashed border-muted-foreground/30 flex items-center justify-center overflow-hidden bg-muted">
+                    {roomPhotoPreview ? (
+                    <Image src={roomPhotoPreview} alt="Room preview" width={600} height={400} className="object-cover w-full h-full" />
+                    ) : (
+                    <div className="text-center text-muted-foreground p-4">
+                        <ImageIcon className="mx-auto h-12 w-12" />
+                        <p>Image preview will appear here</p>
+                    </div>
+                    )}
+                </div>
+                <div className="mt-4 space-y-2 max-w-sm mx-auto">
+                    <Label htmlFor="room-photo-input" className="cursor-pointer inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full">
+                    <Upload className="mr-2 h-4 w-4" />
+                    Choose a Photo
+                    </Label>
+                    <Input id="room-photo-input" type="file" accept="image/*" onChange={handleRoomPhotoChange} className="sr-only" />
+                    {errors.roomPhoto && <p className="text-sm font-medium text-destructive">{errors.roomPhoto.message as string}</p>}
+                </div>
+            </VisualizationStep>
+            
+            <VisualizationStep title="2. Design Your Space">
+                <Tabs defaultValue="controls">
+                    <TabsList className="grid w-full grid-cols-2">
+                        <TabsTrigger value="controls">Controls</TabsTrigger>
+                        <TabsTrigger value="prompt">Prompt</TabsTrigger>
+                    </TabsList>
+                    <TabsContent value="controls" className="pt-4">
+                        <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+                            <div className="space-y-6">
+                                <div>
+                                    <h3 className="font-medium mb-2">Floor Tiles</h3>
+                                    <TileSelector tiles={floorTiles} selectedId={selectedFloorTileId} onSelect={(id) => setValue('floorTile', id)} />
+                                    {errors.floorTile && <p className="mt-2 text-sm font-medium text-destructive">{errors.floorTile.message}</p>}
+                                </div>
+                                <div>
+                                    <h3 className="font-medium mb-2">Wall Tiles</h3>
+                                    <TileSelector tiles={wallTiles} selectedId={selectedWallTileId} onSelect={(id) => setValue('wallTile', id)} />
+                                    {errors.wallTile && <p className="mt-2 text-sm font-medium text-destructive">{errors.wallTile.message}</p>}
+                                </div>
+                            </div>
 
-           <VisualizationStep title="1. Upload Your Room" className="md:col-span-2">
-              <div className="w-full aspect-video rounded-lg border-2 border-dashed border-muted-foreground/30 flex items-center justify-center overflow-hidden bg-muted">
-                {roomPhotoPreview ? (
-                  <Image src={roomPhotoPreview} alt="Room preview" width={600} height={400} className="object-cover w-full h-full" />
-                ) : (
-                  <div className="text-center text-muted-foreground p-4">
-                    <ImageIcon className="mx-auto h-12 w-12" />
-                    <p>Image preview will appear here</p>
-                  </div>
-                )}
-              </div>
-              <div className="mt-4 space-y-2 max-w-sm mx-auto">
-                <Label htmlFor="room-photo-input" className="cursor-pointer inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full">
-                  <Upload className="mr-2 h-4 w-4" />
-                  Choose a Photo
-                </Label>
-                <Input id="room-photo-input" type="file" accept="image/*" onChange={handleRoomPhotoChange} className="sr-only" />
-                {errors.roomPhoto && <p className="text-sm font-medium text-destructive">{errors.roomPhoto.message as string}</p>}
-              </div>
-          </VisualizationStep>
-          
-          <VisualizationStep title="2. Design Your Space">
-            <Tabs defaultValue="controls">
-                <TabsList className="grid w-full grid-cols-2">
-                    <TabsTrigger value="controls">Controls</TabsTrigger>
-                    <TabsTrigger value="prompt">Prompt</TabsTrigger>
-                </TabsList>
-                <TabsContent value="controls" className="pt-4">
-                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
-                        <div className="space-y-6">
-                            <div>
-                                <h3 className="font-medium mb-2">Floor Tiles</h3>
-                                <TileSelector tiles={floorTiles} selectedId={selectedFloorTileId} onSelect={(id) => setValue('floorTile', id)} />
-                                {errors.floorTile && <p className="mt-2 text-sm font-medium text-destructive">{errors.floorTile.message}</p>}
+                            <div className="space-y-6">
+                                <div className="space-y-3">
+                                    <Controller control={control} name="groutWidth" render={({ field }) => (
+                                        <>
+                                        <Label htmlFor="grout-width">Grout Width: {field.value}px</Label>
+                                        <Slider id="grout-width" value={[field.value]} onValueChange={(v) => field.onChange(v[0])} min={0} max={10} step={1} />
+                                        </>
+                                    )} />
+                                </div>
+                                <div className="space-y-3">
+                                    <Controller control={control} name="tileScale" render={({ field }) => (
+                                        <>
+                                        <Label htmlFor="tile-scale">Tile Scale: {field.value}x</Label>
+                                        <Slider id="tile-scale" value={[field.value]} onValueChange={(v) => field.onChange(v[0])} min={0.5} max={2} step={0.1} />
+                                        </>
+                                    )} />
+                                </div>
+                                <div className="space-y-3">
+                                    <Controller control={control} name="tileOrientation" render={({ field }) => (
+                                        <>
+                                        <Label>Tile Orientation</Label>
+                                        <RadioGroup onValueChange={field.onChange} defaultValue={field.value} className="flex gap-4">
+                                            <Label className="flex items-center gap-2 cursor-pointer"><RadioGroupItem value="horizontal" /> Horizontal</Label>
+                                            <Label className="flex items-center gap-2 cursor-pointer"><RadioGroupItem value="vertical" /> Vertical</Label>
+                                        </RadioGroup>
+                                        </>
+                                    )} />
+                                </div>
                             </div>
-                            <div>
-                                <h3 className="font-medium mb-2">Wall Tiles</h3>
-                                <TileSelector tiles={wallTiles} selectedId={selectedWallTileId} onSelect={(id) => setValue('wallTile', id)} />
-                                {errors.wallTile && <p className="mt-2 text-sm font-medium text-destructive">{errors.wallTile.message}</p>}
-                            </div>
-                        </div>
 
-                         <div className="space-y-6">
-                            <div className="space-y-3">
-                                <Controller control={control} name="groutWidth" render={({ field }) => (
-                                    <>
-                                    <Label htmlFor="grout-width">Grout Width: {field.value}px</Label>
-                                    <Slider id="grout-width" value={[field.value]} onValueChange={(v) => field.onChange(v[0])} min={0} max={10} step={1} />
-                                    </>
-                                )} />
+                            <div className="flex justify-center pt-8">
+                                <Button type="submit" size="lg" disabled={isLoading} className="bg-accent text-accent-foreground hover:bg-accent/90 min-w-[200px]">
+                                {isLoading ? (
+                                    <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                                ) : (
+                                    <Wand2 className="mr-2 h-5 w-5" />
+                                )}
+                                {isLoading ? 'Visualizing...' : 'Visualize'}
+                                </Button>
                             </div>
-                            <div className="space-y-3">
-                                <Controller control={control} name="tileScale" render={({ field }) => (
-                                    <>
-                                    <Label htmlFor="tile-scale">Tile Scale: {field.value}x</Label>
-                                    <Slider id="tile-scale" value={[field.value]} onValueChange={(v) => field.onChange(v[0])} min={0.5} max={2} step={0.1} />
-                                    </>
-                                )} />
-                            </div>
-                            <div className="space-y-3">
-                                <Controller control={control} name="tileOrientation" render={({ field }) => (
-                                    <>
-                                    <Label>Tile Orientation</Label>
-                                    <RadioGroup onValueChange={field.onChange} defaultValue={field.value} className="flex gap-4">
-                                        <Label className="flex items-center gap-2 cursor-pointer"><RadioGroupItem value="horizontal" /> Horizontal</Label>
-                                        <Label className="flex items-center gap-2 cursor-pointer"><RadioGroupItem value="vertical" /> Vertical</Label>
-                                    </RadioGroup>
-                                    </>
-                                )} />
-                            </div>
-                        </div>
+                        </form>
+                    </TabsContent>
+                    <TabsContent value="prompt" className="pt-4 space-y-4">
+                        <ChatView messages={messages} />
+                        <PromptInput onSubmit={handlePromptSubmit} isLoading={isLoading} />
+                    </TabsContent>
+                </Tabs>
+            </VisualizationStep>
+        </div>
 
-                        <div className="flex justify-center pt-8">
-                            <Button type="submit" size="lg" disabled={isLoading} className="bg-accent text-accent-foreground hover:bg-accent/90 min-w-[200px]">
-                            {isLoading ? (
-                                <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                            ) : (
-                                <Wand2 className="mr-2 h-5 w-5" />
-                            )}
-                            {isLoading ? 'Visualizing...' : 'Visualize'}
-                            </Button>
-                        </div>
-                    </form>
-                </TabsContent>
-                <TabsContent value="prompt" className="pt-4 space-y-4">
-                    <ChatView messages={messages} />
-                    <PromptInput onSubmit={handlePromptSubmit} isLoading={isLoading} />
-                </TabsContent>
-            </Tabs>
-          </VisualizationStep>
-
-          <VisualizationStep title="3. See The Result">
+        <VisualizationStep title="3. See The Result" className="md:col-span-2">
             {isLoading && (
-              <div className="text-center my-12">
+                <div className="text-center my-12">
                 <Loader2 className="mx-auto h-12 w-12 animate-spin text-primary" />
                 <p className="mt-4 font-medium">Our AI is working its magic...</p>
                 <p className="text-muted-foreground">This can take up to a minute.</p>
-              </div>
+                </div>
             )}
 
             {error && !isLoading && (
@@ -324,7 +324,7 @@ export default function RoomVisualizer() {
             )}
             
             {!isLoading && !error && renderOptions.length === 0 && !selectedRender && (
-                 <div className="text-center text-muted-foreground p-4 h-64 flex flex-col items-center justify-center">
+                    <div className="text-center text-muted-foreground p-4 h-64 flex flex-col items-center justify-center">
                     <Wand2 className="mx-auto h-12 w-12" />
                     <p>Your visualization result will appear here</p>
                 </div>
@@ -377,9 +377,10 @@ export default function RoomVisualizer() {
                 </div>
             </div>
             )}
-          </VisualizationStep>
-        </div>
+        </VisualizationStep>
       </div>
     </section>
   );
 }
+
+    

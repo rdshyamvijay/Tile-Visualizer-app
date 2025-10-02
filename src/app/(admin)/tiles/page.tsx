@@ -1,3 +1,4 @@
+
 import {
   Table,
   TableBody,
@@ -137,7 +138,7 @@ export default function TilesPage() {
                     <Badge variant="outline">{tile.id.startsWith('floor') ? 'Floor' : 'Wall'}</Badge>
                   </TableCell>
                   <TableCell className="hidden md:table-cell">
-                    SKU-{tile.id.toUpperCase()}
+                    {tile.id}
                   </TableCell>
                   <TableCell>
                     <DropdownMenu>
@@ -167,3 +168,5 @@ export default function TilesPage() {
     </div>
   )
 }
+
+    
