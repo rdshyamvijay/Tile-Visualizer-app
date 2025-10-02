@@ -54,12 +54,17 @@ Start a new project by uploading a photo of the space you want to transform.
 Use the intuitive prompt interface to describe the changes you want to see. You can select from existing tiles or type their names directly.
 <img width="398" height="693" alt="Screenshot 2025-10-01 at 22 32 08" src="https://github.com/user-attachments/assets/6ce5b316-716f-484c-a60b-25dd7229161a" />
 
+<img width="1417" height="698" alt="Screenshot 2025-10-01 at 22 37 17" src="https://github.com/user-attachments/assets/68886bd4-85b6-4380-b84f-64ddfa2bee85" />
 
 
 ### 4. See the Results
 
 Instantly visualize the transformation with a before-and-after slider. The AI renders your vision, ready for you to review.
-![Uploading Screenshot 2025-10-01 at 22.32.51.png…]()
+
+<img width="1031" height="765" alt="Screenshot 2025-10-01 at 22 32 51" src="https://github.com/user-attachments/assets/1af20545-9bc9-4dd8-98f5-62a664b28cff" />
+
+
+<img width="1023" height="680" alt="Screenshot 2025-10-01 at 22 37 55" src="https://github.com/user-attachments/assets/1544422f-1a2f-4c8b-907e-2aa6d341717f" />
 
 
 ---
